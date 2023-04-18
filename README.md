@@ -70,7 +70,7 @@ import 'firebase_options.dart';
 # 2. Add this in main()
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -84,3 +84,30 @@ pod install
 cd ../macos
 pod install
 ```
+
+## 2-Firebase-UI-Auth
+
+Follow this guide - https://github.com/firebase/flutterfire/tree/master/packages/firebase_ui_auth/doc
+
+Github - https://github.com/firebase/flutterfire/tree/master/packages
+
+Discussion - https://github.com/firebase/flutterfire/discussions/6978 
+
+StoryBook - https://flutterfire-ui.web.app/#/ 
+
+### Part 1: Setup 
+
+```
+# 1. Install libraries
+flutter pub add firebase_auth
+flutter pub add firebase_dynamic_links
+flutter pub add firebase_ui_auth
+
+# 2. Re-run flutterfire configure 
+flutterfire configure
+
+# 3. Go to Firebase Console and enable email/password authentication
+
+# 4. Run and test register, sign in, verification link and profile page
+```
+
