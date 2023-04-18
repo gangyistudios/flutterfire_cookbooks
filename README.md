@@ -59,3 +59,15 @@ flutter pub add firebase_core
 flutterfire configure
 ```
 
+#### Part 3: Add the initialisation code in main.dart
+
+```
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
+...
+
+await Firebase.initializeApp(
+  options: DefaultFirebaseOptions.currentPlatform,
+);
+```
