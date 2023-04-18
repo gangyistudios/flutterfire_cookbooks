@@ -62,12 +62,25 @@ flutterfire configure
 #### Part 3: Add the initialisation code in main.dart
 
 ```
+# 1. Add this at top of main.dart
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
-...
 
-await Firebase.initializeApp(
-  options: DefaultFirebaseOptions.currentPlatform,
-);
+# 2. Add this in main()
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  ...
+
+# 3. If issues running on ios or macos
+sudo gem install activesupport -v 6.1.7.3
+sudo gem install cocoapods  
+cd ios 
+pod install
+cd ../macos
+pod install
 ```
