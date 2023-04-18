@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "932244088655",
+    "project_id": "flutterfire-cookbooks",
+    "storage_bucket": "flutterfire-cookbooks.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:932244088655:android:d7cab033ca8fdc0805473a",
+        "android_client_info": {
+          "package_name": "com.example.flutterfire_cookbooks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "932244088655-h3re1fcqvkk0h25lga4oktmn1scn948b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJwPCIvyPOQ2fqdpwG5n0V7FdiZDwZb-k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "932244088655-h3re1fcqvkk0h25lga4oktmn1scn948b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "932244088655-pc5vth2dec14d8078ieuabls7isnr9be.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterfireCookbooks"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
