@@ -18,9 +18,9 @@ Engine • revision 1a65d409c7
 Tools • Dart 2.19.6 • DevTools 2.20.1
 
 
-#### Part 1: Install Firebase & FlutterFire CLIs  
+### Part 1: Install Firebase & FlutterFire CLIs  
 
-```
+```sh
 # 1. Install Firebase CLI
 curl -sL https://firebase.tools | bash
 
@@ -43,9 +43,9 @@ dart pub global activate flutterfire_cli
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 ```
 
-#### Part 2: Configure Firebase in Flutter project using FlutterFire
+### Part 2: Configure Firebase in Flutter project using FlutterFire
 
-```
+```sh
 # 1. Configure apps to use firebase - * Rerun this any time you add a new platform or firebase service *
 flutterfire configure
 
@@ -59,9 +59,9 @@ flutter pub add firebase_core
 flutterfire configure
 ```
 
-#### Part 3: Add the initialisation code in main.dart
+### Part 3: Add the initialisation code in main.dart
 
-```
+```sh
 # 1. Add this at top of main.dart
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -97,7 +97,7 @@ StoryBook - https://flutterfire-ui.web.app/#/
 
 ### Part 1: Setup 
 
-```
+```sh
 # 1. Install libraries
 flutter pub add firebase_auth
 flutter pub add firebase_dynamic_links
@@ -111,3 +111,37 @@ flutterfire configure
 # 4. Run and test register, sign in, verification link and profile page
 ```
 
+## 3-CircleMagic-CI/CD
+
+### Part 1: Setup 
+
+Current Flutter environment 
+
+```sh
+~/Projects/flutterfire_cookbooks % flutter doctor
+Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel stable, 3.7.11, on macOS 13.2.1 22D68 darwin-arm64, locale
+    en-AU)
+[✓] Android toolchain - develop for Android devices (Android SDK version 33.0.2)
+[✓] Xcode - develop for iOS and macOS (Xcode 14.3)
+[✓] Chrome - develop for the web
+[✓] Android Studio (version 2022.2)
+[✓] IntelliJ IDEA Ultimate Edition (version 2022.2.2)
+[✓] VS Code (version 1.75.1)
+[✓] Connected device (2 available)
+[✓] HTTP Host Availability
+
+• No issues found!
+```
+
+```sh
+# 1. Install Flutter version management 
+https://fvm.app/docs/getting_started/installation 
+
+# 2. Add to gitignore
+.fvm/flutter_sdk
+
+# 3. Use stable channel flutter (run from project root)
+fvm use stable
+
+```
