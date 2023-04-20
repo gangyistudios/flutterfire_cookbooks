@@ -159,3 +159,6 @@ fvm use stable
 ```
 
 ### Part 2: Configure codemagic.yaml
+
+Follow this guide - https://docs.codemagic.io/yaml-quick-start/building-a-flutter-app/ 
+
