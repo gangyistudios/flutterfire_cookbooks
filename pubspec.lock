@@ -66,7 +66,7 @@ packages:
     source: hosted
     version: "1.0.5"
   desktop_webview_auth:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: desktop_webview_auth
       sha256: "9de17601e1521b7cc2de1c5538e92f64833da668cba101bf11b2f61ce652becc"

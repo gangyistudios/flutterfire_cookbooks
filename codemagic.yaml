@@ -11,6 +11,9 @@ workflows:
     instance_type: mac_mini_m1
     environment:
       flutter: fvm
+      ios_signing:
+        distribution_type: app_store # or: ad_hoc | development | enterprise
+        bundle_identifier: com.gangyistudios.flutterfireCookbooks
     scripts:
       - name: Set up code signing settings on Xcode project
         script: | 
