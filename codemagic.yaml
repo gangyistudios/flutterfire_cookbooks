@@ -16,23 +16,23 @@ workflows:
         bundle_identifier: com.gangyistudios.flutterfireCookbooks
     scripts:
       - name: Set up code signing settings on Xcode project
-        script: | 
+        script: |
           xcode-project use-profiles
       - name: Get Flutter packages
-        script: | 
+        script: |
           flutter packages pub get
       - name: Install pods
-        script: | 
+        script: |
           find . -name "Podfile" -execdir pod install \;
       - name: Flutter build ipa
-        script: | 
+        script: |
           flutter build ipa --release \
             --build-name=1.0.0 \
             --export-options-plist=/Users/builder/export_options.plist
-      artifacts:
-        - build/ios/ipa/*.ipa
-        - /tmp/xcodebuild_logs/*.log
-        - flutter_drive.log
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+      - flutter_drive.log
   android-workflow:
     name: Android Workflow
     max_build_duration: 30
@@ -51,7 +51,7 @@ workflows:
       - name: Build AAB with Flutter
         script: |
           flutter build appbundle --release
-      artifacts:
-        - build/**/outputs/**/*.aab
-        - build/**/outputs/**/mapping.txt
-        - flutter_drive.log
+    artifacts:
+      - build/**/outputs/**/*.aab
+      - build/**/outputs/**/mapping.txt
+      - flutter_drive.log
