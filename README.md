@@ -113,8 +113,6 @@ flutterfire configure
 
 ## 3-CircleMagic-CI/CD
 
-### Part 1: Setup 
-
 Current Flutter environment 
 
 ```sh
@@ -134,6 +132,8 @@ Doctor summary (to see all details, run flutter doctor -v):
 • No issues found!
 ```
 
+### Part 1: Install and configure Flutter Version Management (FVM) 
+
 ```sh
 # 1. Install Flutter version management 
 https://fvm.app/docs/getting_started/installation 
@@ -141,7 +141,21 @@ https://fvm.app/docs/getting_started/installation
 # 2. Add to gitignore
 .fvm/flutter_sdk
 
+# 3. Add to .vscode/settings.json
+{
+    "dart.flutterSdkPath": ".fvm/flutter_sdk",
+    // Remove .fvm files from search
+    "search.exclude": {
+        "**/.fvm": true
+    },
+    // Remove from file watching
+    "files.watcherExclude": {
+        "**/.fvm": true
+    }
+}
+
 # 3. Use stable channel flutter (run from project root)
 fvm use stable
-
 ```
+
+### Part 2: Configure codemagic.yaml

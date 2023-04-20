@@ -1,0 +1,7 @@
+workflows:
+    web-workflow:
+        name: Web Workflow
+        max_build_duration: 30
+        instance_type: mac_mini_m1
+        environment: 
+          flutter: fvm
