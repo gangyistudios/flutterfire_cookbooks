@@ -6,7 +6,7 @@ workflows:
     environment:
       flutter: fvm
   ios-workflow:
-    name: Web Workflow
+    name: Ios Workflow
     max_build_duration: 30
     instance_type: mac_mini_m1
     environment:
