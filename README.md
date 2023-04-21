@@ -162,6 +162,8 @@ fvm use stable
 
 Follow this guide - https://docs.codemagic.io/yaml-quick-start/building-a-flutter-app/ 
 
+Check the new file/directory added in this branch, `codemagic.yaml` and `.fvm`
+
 Error in codemagic build.
 ```
 Encountered error while creating the IPA:
@@ -172,3 +174,5 @@ sudo gem update cocoapods --pre
 pod update 
 # In Xcode, clean and build. 
 ```
+
+After this step, any push will build and deploy IOS to testflight. 
