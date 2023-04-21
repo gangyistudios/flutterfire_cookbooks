@@ -162,3 +162,13 @@ fvm use stable
 
 Follow this guide - https://docs.codemagic.io/yaml-quick-start/building-a-flutter-app/ 
 
+Error in codemagic build.
+```
+Encountered error while creating the IPA:
+error: exportArchive: "Runner.app" requires a provisioning profile.
+
+# Follow this - https://stackoverflow.com/a/55521074 
+sudo gem update cocoapods --pre 
+pod update 
+# In Xcode, clean and build. 
+```
