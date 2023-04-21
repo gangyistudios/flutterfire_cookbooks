@@ -38,6 +38,10 @@ dependencies:
   firebase_ui_auth: ^1.2.1
   firebase_auth: ^4.4.1
   desktop_webview_auth: ^0.0.11
+  cloud_firestore: ^4.5.2
+  firebase_ui_firestore: ^1.3.2
+  url_launcher_platform_interface: ^2.1.2
+  url_launcher: ^6.1.10
 
 dev_dependencies:
   flutter_test:

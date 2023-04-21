@@ -165,7 +165,7 @@ Follow this guide - https://docs.codemagic.io/yaml-quick-start/building-a-flutte
 Check the new file/directory added in this branch, `codemagic.yaml` and `.fvm`
 
 Error in codemagic build.
-```
+```sh
 Encountered error while creating the IPA:
 error: exportArchive: "Runner.app" requires a provisioning profile.
 
@@ -176,3 +176,14 @@ pod update
 ```
 
 After this step, any push will build and deploy IOS to testflight. 
+
+## 4-Firebase-UI-Firestore 
+
+We now integrate with firestore using (FlutterFire's) firebase firestore UI kit. 
+
+```sh
+fvm flutter pub add cloud_firestore
+fvm flutter pub add firebase_ui_firestore
+```
+
+And view `orders_list_screen.dart` which retrieves Firestore collection 'orders' into a list view. 
