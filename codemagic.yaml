@@ -18,6 +18,14 @@ workflows:
         bundle_identifier: com.gangyistudios.flutterfireCookbooks
       vars:
         APP_ID: 6448119052
+    cache:
+      cache_paths:
+        - $FLUTTER_ROOT/.pub-cache
+        - $HOME/.gradle/caches
+        - $HOME/Library/Caches/CocoaPods
+    triggering:
+      events: # List the events that trigger builds
+        - push
     scripts:
       - name: Set up code signing settings on Xcode project
         script: |
@@ -34,11 +42,6 @@ workflows:
             --build-name=1.0.0 \
             --build-number=$(($(app-store-connect get-latest-testflight-build-number "$APP_ID") + 1)) \
             --export-options-plist=/Users/builder/export_options.plist
-    cache:
-      cache_paths:
-        - $FLUTTER_ROOT/.pub-cache
-        - $HOME/.gradle/caches
-        - $HOME/Library/Caches/CocoaPods
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
