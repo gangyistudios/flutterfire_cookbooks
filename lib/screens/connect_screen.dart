@@ -2,10 +2,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:url_launcher_platform_interface/url_launcher_platform_interface.dart';
 import '../firebase_options.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 // Leave main method here so we can run in isolation
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const ConnectScreen());
 }
@@ -38,7 +40,7 @@ class ConnectScreen extends StatelessWidget {
         body: Center(
           child: ElevatedButton(
             onPressed: () async {
-              const url = 'https://www.ebay.com/';
+              String url = dotenv.env['CONNECT_URL'] ?? '';
               if (await canLaunch(url)) {
                 await launch(url);
               } else {

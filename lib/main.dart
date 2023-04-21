@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart' hide EmailAuthProvider;
 import 'package:firebase_ui_auth/firebase_ui_auth.dart';
+import 'package:flutterfire_cookbooks/screens/connect_screen.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -30,10 +31,13 @@ class MyApp extends StatelessWidget {
             providers: providers,
             actions: [
               AuthStateChangeAction<SignedIn>((context, state) {
-                Navigator.pushReplacementNamed(context, '/profile');
+                Navigator.pushReplacementNamed(context, '/connect');
               }),
             ],
           );
+        },
+        '/connect': (context) {
+          return const ConnectScreen();
         },
         '/profile': (context) {
           return ProfileScreen(
