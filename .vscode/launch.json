@@ -5,10 +5,22 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Kill emulators",
+            "request": "launch",
+            "type": "node-terminal",
+            "command": "kill $(lsof -t -i:4000 ) || kill $(lsof -t -i:8080 ) || kill $(lsof -t -i:9099  ) || kill $(lsof -t -i:5001 )",
+        },
+        {
+            "name": "Deploy functions",
+            "request": "launch",
+            "type": "node-terminal",
+            "command": "firebase deploy --only functions",
+        },
+        {
             "name": "Start Firebase Emulators",
             "request": "launch",
             "type": "node-terminal",
-            "command": "firebase emulators:start --import .emulators --export-on-exit .emulators",
+            "command": "npm run build -C functions && firebase emulators:start --import .emulators --export-on-exit .emulators",
         },
         {
             "name": "FlutterFire Cookbooks (Debug Mode)",

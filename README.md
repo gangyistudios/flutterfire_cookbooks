@@ -389,3 +389,17 @@ firebase emulators:start --import .emulators --export-on-exit .emulators
 firebase deploy --only functions
 ```
 
+## 6-Firebase-Functions-Auth-Triggers
+
+We are roughly following this guide: https://firebase.google.com/docs/functions/auth-events 
+
+In this step, we set up a cloud function which automatically create a new Firestore user document in the `users` collection whenever a new user is signed up with Firebase Authentication. We then set up another function which deletes the document if the user is deleted. 
+
+Simply add the functions `createUserDocumentOnSignUp` and `deleteUserDocumentOnDelete` in `functions/src/index.ts` and then run the "FlutterFire Cookbooks (Debug+Local Emulators Mode) with Emulators" VSCode launch configuration to test it out. 
+
+After it looks okay, deploy the function with: 
+
+```sh
+cd functions && npm run build
+firebase deploy --only functions
+```

@@ -8,5 +8,7 @@
     "files.watcherExclude": {
         "**/.fvm": true
     },
-    "java.configuration.updateBuildConfiguration": "disabled"
+    // Only specific to my machine...
+    "java.configuration.updateBuildConfiguration": "disabled",
+    "python.terminal.activateEnvironment": false,
 }
