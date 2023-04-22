@@ -34,7 +34,14 @@ class ConnectScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text('Connect')),
+        appBar: AppBar(
+            leading: IconButton(
+              icon: const Icon(Icons.arrow_back),
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, '/menu');
+              },
+            ),
+            title: const Text('Connect')),
         body: Center(
           child: ElevatedButton(
             onPressed: () async {

@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart' hide EmailAuthProvider;
 import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutterfire_cookbooks/screens/call_functions_screen.dart';
 import 'package:flutterfire_cookbooks/screens/connect_screen.dart';
+import 'package:flutterfire_cookbooks/screens/menu_screen.dart';
 import 'package:flutterfire_cookbooks/shared/configure_emulators.dart';
 import 'firebase_options.dart';
 
@@ -34,17 +35,20 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       initialRoute:
-          FirebaseAuth.instance.currentUser == null ? '/sign-in' : '/profile',
+          FirebaseAuth.instance.currentUser == null ? '/sign-in' : '/menu',
       routes: {
         '/sign-in': (context) {
           return SignInScreen(
             providers: providers,
             actions: [
               AuthStateChangeAction<SignedIn>((context, state) {
-                Navigator.pushReplacementNamed(context, '/call-functions');
+                Navigator.pushReplacementNamed(context, '/menu');
               }),
             ],
           );
+        },
+        '/menu': (context) {
+          return const MenuScreen();
         },
         '/connect': (context) {
           return const ConnectScreen();
@@ -54,6 +58,15 @@ class MyApp extends StatelessWidget {
         },
         '/profile': (context) {
           return ProfileScreen(
+            appBar: AppBar(
+              leading: IconButton(
+                icon: const Icon(Icons.arrow_back),
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/menu');
+                },
+              ),
+              title: const Text('Profile Screen'),
+            ),
             providers: providers,
             actions: [
               SignedOutAction((context) {

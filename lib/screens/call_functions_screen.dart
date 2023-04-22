@@ -49,7 +49,15 @@ class CallFunctionsScreen extends StatelessWidget {
 
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text('Call Functions Screen')),
+        appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pushReplacementNamed(context, '/menu');
+            },
+          ),
+          title: const Text('Call Functions Screen'),
+        ),
         body: Center(
           child: Column(
             children: [
@@ -60,7 +68,7 @@ class CallFunctionsScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-              // const GetUserDetails(),
+              const GetUserDetails(),
               const Padding(padding: EdgeInsets.all(8.0)),
               const GetUserData(),
             ],
@@ -87,7 +95,7 @@ class GetUserDetails extends StatelessWidget {
       ),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
-          return SizedBox();
+          return const SizedBox(child: Text('Loading getUserDetails...'));
         }
 
         final response = snapshot.data!.data;
@@ -117,7 +125,7 @@ class GetUserData extends StatelessWidget {
       ),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
-          return const SizedBox();
+          return const SizedBox(child: Text('Loading getUserData...'));
         }
 
         final response = snapshot.data!.data;

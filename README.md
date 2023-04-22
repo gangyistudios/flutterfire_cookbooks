@@ -384,5 +384,8 @@ firebase emulators:start --import .emulators --export-on-exit .emulators
 
 # 4. Add a new Flutter screen which calls the function getUserData and displays the response
 # See file: lib/screens/call_functions_screen.dart
+
+# 5. After testing all ok deploy the function to prod
+firebase deploy --only functions
 ```
 
