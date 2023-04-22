@@ -42,6 +42,12 @@ class MenuScreen extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () async {
+                Navigator.pushReplacementNamed(context, '/orders');
+              },
+              child: const Text('Retrieve from Firestore'),
+            ),
+            ElevatedButton(
+              onPressed: () async {
                 Navigator.pushReplacementNamed(context, '/call-functions');
               },
               child: const Text('Call Functions'),

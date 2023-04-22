@@ -10,11 +10,11 @@ import 'package:flutter/material.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(const OrdersListView());
+  runApp(const OrdersListScreen());
 }
 
-class OrdersListView extends StatelessWidget {
-  const OrdersListView({super.key});
+class OrdersListScreen extends StatelessWidget {
+  const OrdersListScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,15 @@ class OrdersListView extends StatelessWidget {
 
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text('Orders')),
+        appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pushReplacementNamed(context, '/menu');
+            },
+          ),
+          title: const Text('Firestore List Screen'),
+        ),
         body: FirestoreListView<OrderModel>(
           query: collection,
           padding: const EdgeInsets.all(8.0),

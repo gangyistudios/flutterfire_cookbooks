@@ -5,6 +5,7 @@ import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutterfire_cookbooks/screens/call_functions_screen.dart';
 import 'package:flutterfire_cookbooks/screens/connect_screen.dart';
 import 'package:flutterfire_cookbooks/screens/menu_screen.dart';
+import 'package:flutterfire_cookbooks/screens/orders_list_screen.dart';
 import 'package:flutterfire_cookbooks/shared/configure_emulators.dart';
 import 'firebase_options.dart';
 
@@ -52,6 +53,9 @@ class MyApp extends StatelessWidget {
         },
         '/connect': (context) {
           return const ConnectScreen();
+        },
+        '/orders': (context) {
+          return const OrdersListScreen();
         },
         '/call-functions': (context) {
           return const CallFunctionsScreen();
