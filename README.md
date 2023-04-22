@@ -187,3 +187,27 @@ fvm flutter pub add firebase_ui_firestore
 ```
 
 And view `orders_list_screen.dart` which retrieves Firestore collection 'orders' into a list view. 
+
+This part is relatively simple - just install the packages, enable firestore in Firebase console, add some test documents to the 'orders' collection and add the `orders_list_screen.dart`. 
+
+`flutterfire configure` which we ran in previous steps already took care of all the Firebase integration/configuration to our Flutter app. 
+
+## 5-Firebase-Cloud-Functions 
+
+To integrate with a 3rd party API that uses OAuth 2.0 flows, we need to retrieve the OAuth Bearer Token. We don't want to expose this token to the client/front-end Flutter app, so we utilise functions for both the OAuth flow as well as any other subsequent calls to the 3rd party API. 
+
+
+```sh
+# 1. Enable Billing and Cloud Functions for the firebase project from Google Cloud Console (not the Firebase Console) 
+https://console.cloud.google.com/ 
+
+# 2. From the project root, initialise a functions project, creates functions/ directory in the project root. Ensure 
+firebase init functions # Language=Typescript, ESLint=Yes, Install deps with npm=Yes
+
+# (Optional) If any issues with the above step, try 
+firebase logout 
+firebase login
+
+# 3. Re-run flutterfire configure
+flutterfire configure
+```

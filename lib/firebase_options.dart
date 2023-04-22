@@ -62,12 +62,12 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyC80bzMHXA_ljTv5uEfXtE8Zp_txVvVm-U',
-    appId: '1:932244088655:ios:340508f70ebb67b805473a',
+    appId: '1:932244088655:ios:3aa0944a92c0d1e405473a',
     messagingSenderId: '932244088655',
     projectId: 'flutterfire-cookbooks',
     storageBucket: 'flutterfire-cookbooks.appspot.com',
-    iosClientId: '932244088655-pc5vth2dec14d8078ieuabls7isnr9be.apps.googleusercontent.com',
-    iosBundleId: 'com.example.flutterfireCookbooks',
+    iosClientId: '932244088655-6a584f9c69s4mj0j0in0e5fk8537htli.apps.googleusercontent.com',
+    iosBundleId: 'com.gangyistudios.flutterfireCookbooks',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
