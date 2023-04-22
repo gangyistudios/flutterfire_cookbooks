@@ -5,12 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "flutterfire_cookbooks (debug mode)",
+            "name": "Start Firebase Emulators",
+            "request": "launch",
+            "type": "node-terminal",
+            "command": "firebase emulators:start --import .emulators --export-on-exit .emulators",
+        },
+        {
+            "name": "FlutterFire Cookbooks (Debug Mode)",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "flutterfire_cookbooks (debug+local emulators mode)",
+            "name": "FlutterFire Cookbooks (Debug+Local Emulators Mode)",
             "request": "launch",
             "type": "dart",
             "toolArgs": [
@@ -19,16 +25,25 @@
             ]
         },
         {
-            "name": "flutterfire_cookbooks (profile mode)",
+            "name": "FlutterFire Cookbooks (Profile Mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "flutterfire_cookbooks (release mode)",
+            "name": "Flutterfire Cookbooks (Release Mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
+        },
+    ],
+    "compounds": [
+        {
+            "name": "FlutterFire Cookbooks (Debug+Local Emulators Mode) with Emulators",
+            "configurations": [
+                "Start Firebase Emulators",
+                "FlutterFire Cookbooks (Debug+Local Emulators Mode)"
+            ]
         }
     ]
 }
